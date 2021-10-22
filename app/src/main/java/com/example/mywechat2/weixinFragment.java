@@ -17,38 +17,58 @@ public class weixinFragment extends Fragment {
 
     private RecyclerView recyclerView;
     private List<String> mList = new ArrayList<>();
+    private List<String> sList = new ArrayList<>();
     private Context context;
+    int[] imageId;
     private VerticalAdapter adapter;
     public weixinFragment() {
     }
 
     private void initData() {
-        mList.add("暗裔剑魔-亚托克斯");
-        mList.add("蒸汽机器人-布里茨");
-        mList.add("诺克萨斯之手-德莱厄斯");
-        mList.add("祖安狂人-蒙多医生");
-        mList.add("无双剑姬-菲奥娜");
-        mList.add("酒桶-古拉加斯");
-        mList.add("锋意志-艾瑞莉娅");
-        mList.add("武器大师-贾克斯");
-        mList.add("虚空掠夺者-卡兹克");
-        mList.add("盲僧-李青");
-        mList.add("沙漠死神-内瑟斯");
-        mList.add("永恒梦魇-魔腾");
-        mList.add("巨魔之王-特朗德尔");
-        mList.add("魂锁典狱长-锤石");
-        mList.add("刀锋之影-泰隆");
-        mList.add("符文法师-瑞兹");
-        mList.add("放逐之刃-锐雯");
-        mList.add("生化魔人-扎克");
-        mList.add("雷霆咆哮-沃利贝尔");
-        mList.add("策士统领-斯维因");
-        mList.add("炼金术士-辛吉德");
-        mList.add("披甲龙龟-拉莫斯");
-        mList.add("傲之追猎者-雷恩加尔");
-        mList.add("兽灵行者-乌迪尔");
-        mList.add("德玛西亚之翼-奎因");
-        mList.add("疾风剑豪-亚索");
+        sList.add("  芝士龙虾焗意面");
+        sList.add("  葱爆孜然牛肉");
+        sList.add("  生炒口味鸡");
+        sList.add("  鱼香肉末茄子");
+        sList.add("  蟹黄拌面");
+        sList.add("  干锅土豆片");
+        sList.add("  辣椒炒肉");
+        sList.add("  干香火爆鱿鱼须");
+        sList.add("  铁板黑椒牛肉");
+        sList.add("  肉末鸡蛋豆腐");
+        sList.add("  甜豆香肠");
+        sList.add("  恩施有机土豆");
+        sList.add("  酸菜豆花鱼");
+        sList.add("  红烧狮子头");
+
+        mList.add("      波士顿龙虾、宽扁意面");
+        mList.add("      新鲜大葱、M9牛肉");
+        mList.add("      秘制酱料、正宗走地鸡");
+        mList.add("      现杀鲈鱼、新鲜茄子");
+        mList.add("      手剥精选阳澄湖大闸蟹膏");
+        mList.add("      干锅土豆片");
+        mList.add("      辣椒炒肉");
+        mList.add("      干香火爆鱿鱼须");
+        mList.add("      铁板黑椒牛肉");
+        mList.add("      肉末鸡蛋豆腐");
+        mList.add("      甜豆香肠");
+        mList.add("      恩施有机土豆");
+        mList.add("      酸菜豆花鱼");
+        mList.add("      红烧狮子头");
+        imageId= new int[]{
+                R.drawable.food1,
+                R.drawable.food1,
+                R.drawable.food1,
+                R.drawable.food1,
+                R.drawable.food1,
+                R.drawable.food7,
+                R.drawable.food6,
+                R.drawable.food8,
+                R.drawable.food9,
+                R.drawable.food10,
+                R.drawable.food10,
+                R.drawable.food1,
+                R.drawable.food1,
+                R.drawable.food1};
     }
 
     private void initView_1() {
@@ -57,13 +77,11 @@ public class weixinFragment extends Fragment {
         RecyclerView rcvVertical = recyclerView.findViewById(R.id.rcv_vertical);
         LinearLayoutManager managerVertical = new LinearLayoutManager(context);
         managerVertical.setOrientation(LinearLayoutManager.VERTICAL);
-
         rcvVertical.setLayoutManager(managerVertical);
         rcvVertical.setHasFixedSize(true);
         rcvVertical.setAdapter(adapter);
-        adapter.setVerticalDataList(mList);
+        adapter.setVerticalDataList(sList,mList,imageId);
     }
-
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -71,7 +89,6 @@ public class weixinFragment extends Fragment {
         recyclerView=view.findViewById(R.id.rcv_vertical);
         initData();
         initView_1();
-
         return view;
 
     }

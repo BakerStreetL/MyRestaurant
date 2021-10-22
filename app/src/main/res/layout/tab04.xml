@@ -13,6 +13,6 @@
         android:layout_gravity="center"
         android:gravity="center"
         android:layout_weight="1"
-        android:text="这是设置界面"
+        android:text="这是饮料界面"
         android:textSize="25sp" />
 </LinearLayout>

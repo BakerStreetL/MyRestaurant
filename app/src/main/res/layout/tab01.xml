@@ -6,8 +6,6 @@
     android:layout_height="match_parent"
     android:background="#E8CACA"
     tools:context=".MainActivity">
-
-
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rcv_vertical"
         android:layout_width="match_parent"
